@@ -17,7 +17,7 @@ public class MainApp extends Application
 		root.getChildren().addAll(sudoku.getVbox1(), sudoku.getVbox2(), sudoku.getVbox3());
 				
 		Scene scene =  new Scene(root);
-		scene.getStylesheets().add(getClass().getResource("/Styles/style.css").toString());
+		scene.getStylesheets().add(getClass().getResource("/Sudoku/Styles/style.css").toString());
 		
 		primaryStage.setScene(scene);
 		primaryStage.show();

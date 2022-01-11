@@ -12,10 +12,12 @@ public class LitltleSudoku
 	private VBox vbox1 = new VBox();
 	private VBox vbox2 = new VBox();
 	private VBox vbox3 = new VBox();
+	private static final String LsudokuClass = "LsudokuClass";
 	
 	public ArrayList<IndividualCase> getIndividualCaseList()
 	{
 		return individualCaseList;
+		
 		
 	}
 
@@ -48,6 +50,7 @@ public class LitltleSudoku
 		init(vbox3);
 		
 		hbox.getChildren().addAll(vbox1, vbox2, vbox3);
+		hbox.getStyleClass().add(LsudokuClass);
 		
 	}
 
