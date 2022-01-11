@@ -1,12 +1,23 @@
-.textfield {
-  -fx-text-box-border: #dfb8b8;
-  -fx-focus-color: #4122b2;
+.text-field {
+  -fx-focus-color: #4f3f88;
+
+  -fx-padding: 10;
+  -fx-border-style: solid inside;
+
+  -fx-border-radius: 5;
+  -fx-border-color: rgb(65, 187, 218);
+  -fx-min-width: 100;
+  -fx-min-height: 100;
 }
-#LsudokuClass {
-  -fx-text-box-border: #071088;
-  fx-padding: 2px;
+.LsudokuClass {
+  fx-border-width: 2px;
+
+  -fx-border-style: solid inside;
+  -fx-border-width: 2;
+
+  -fx-border-radius: 5;
+  -fx-border-color: blue;
 }
 
 .root {
-  -fx-background-color: aqua;
 }
