@@ -17,11 +17,13 @@ public class IndividualCase
 	private static final String textfieldClass = "textfield";
 	private static final String littlefieldClass = "littlefield";
 	private StackPane stackPane;
+	private boolean bigFaceToFront;
+	private boolean littleGroupToFront;
 
 	public IndividualCase(int id)
 	{
 		this.id = id;
-
+		bigFaceToFront = true;
 		init();
 
 		bigTextField.getStyleClass().add(textfieldClass);
@@ -35,6 +37,31 @@ public class IndividualCase
 		littleNbrPosition();		
 		
 	}		
+
+	public Group getLittleNbrGroup()
+	{
+		return littleNbrGroup;
+	}
+
+	public boolean isBigFaceToFront()
+	{
+		return bigFaceToFront;
+	}
+
+	public void setBigFaceToFront(boolean bigFaceToFront)
+	{
+		this.bigFaceToFront = bigFaceToFront;
+	}
+
+	public boolean isLittleGroupToFront()
+	{
+		return littleGroupToFront;
+	}
+
+	public void setLittleGroupToFront(boolean littleGroupToFront)
+	{
+		this.littleGroupToFront = littleGroupToFront;
+	}
 
 	public TextField getTextField()
 	{

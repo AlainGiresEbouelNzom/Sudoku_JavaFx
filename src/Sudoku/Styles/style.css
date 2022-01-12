@@ -1,7 +1,7 @@
 .textfield {
   
   -fx-border-style: solid inside; 
-  -fx-border-color: #27cfec;  
+  -fx-border-color:lightgrey;  
   -fx-min-width: 120;
   -fx-min-height: 70;
   -fx-max-width: 120;
@@ -17,7 +17,7 @@
   fx-border-width: 6px;
   -fx-border-style: solid; 
   -fx-border-radius: 5;
-  -fx-border-color:red;
+  -fx-border-color:blue;
    -fx-min-width: 360;
   -fx-min-height: 210;
    -fx-max-width: 350;

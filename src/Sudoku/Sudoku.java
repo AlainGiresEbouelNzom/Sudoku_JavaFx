@@ -6,7 +6,7 @@ import javafx.scene.layout.VBox;
 
 public class Sudoku
 {
-	private static ArrayList <LitltleSudoku> littleSudokuList;
+	private  ArrayList <LitltleSudoku> littleSudokuList;
 	private VBox vbox1 = new VBox();
 	private VBox vbox2 = new VBox();
 	private VBox vbox3 = new VBox();
@@ -53,7 +53,7 @@ public class Sudoku
 		}
 	}
 
-	public static ArrayList<LitltleSudoku> getLittleSudokuList()
+	public  ArrayList<LitltleSudoku> getLittleSudokuList()
 	{
 		return littleSudokuList;
 	}
