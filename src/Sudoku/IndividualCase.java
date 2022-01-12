@@ -1,66 +1,43 @@
 package Sudoku;
 
+import java.util.ArrayList;
+
 import javafx.scene.Group;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.StackPane;
 
 public class IndividualCase
 {
-	private TextField bigTextField;	
-	private TextField textField1;
-	private TextField textField2;
-	private TextField textField3;
-	private TextField textField4;
-	private TextField textField5;	
+	private TextField bigTextField;
+
 	private Group littleNbrGroup;
 	private int id;
 	private static final String textfieldClass = "textfield";
 	private static final String littlefieldClass = "littlefield";
 	private StackPane stackPane;
-	private boolean bigFaceToFront;
-	private boolean littleGroupToFront;
+	private ArrayList<LittleNumber> littleNbrList;
 
 	public IndividualCase(int id)
 	{
 		this.id = id;
-		bigFaceToFront = true;
+
 		init();
 
 		bigTextField.getStyleClass().add(textfieldClass);
 
 		stackPane.getChildren().addAll(littleNbrGroup, bigTextField);
 
-		//littleNbrGroup.toFront();
+		// littleNbrGroup.toFront();
 
-		CreateLittleCssClass();
-		
-		littleNbrPosition();		
-		
-	}		
+		setCssIdAndClass();
+
+		littleNbrPosition();
+
+	}
 
 	public Group getLittleNbrGroup()
 	{
 		return littleNbrGroup;
-	}
-
-	public boolean isBigFaceToFront()
-	{
-		return bigFaceToFront;
-	}
-
-	public void setBigFaceToFront(boolean bigFaceToFront)
-	{
-		this.bigFaceToFront = bigFaceToFront;
-	}
-
-	public boolean isLittleGroupToFront()
-	{
-		return littleGroupToFront;
-	}
-
-	public void setLittleGroupToFront(boolean littleGroupToFront)
-	{
-		this.littleGroupToFront = littleGroupToFront;
 	}
 
 	public TextField getTextField()
@@ -72,42 +49,16 @@ public class IndividualCase
 	{
 		return id;
 	}
-	
+
 	public TextField getBigTextField()
 	{
 		return bigTextField;
-	}	
-
-	public TextField getTextField1()
-	{
-		return textField1;
-	}	
-
-	public TextField getTextField2()
-	{
-		return textField2;
 	}
-	
-	public TextField getTextField3()
-	{
-		return textField3;
-	}
-
-	public TextField getTextField4()
-	{
-		return textField4;
-	}
-
-	public TextField getTextField5()
-	{
-		return textField5;
-	}		
 
 	public StackPane getStackPane()
 	{
 		return stackPane;
 	}
-	
 
 	private void init()
 	{
@@ -115,46 +66,49 @@ public class IndividualCase
 
 		bigTextField = new TextField();
 
-		this.textField1 = new TextField();
-		this.textField2 = new TextField();
-		this.textField3 = new TextField();
-		this.textField4 = new TextField();
-		this.textField5 = new TextField();
-
 		littleNbrGroup = new Group();
-		littleNbrGroup.getChildren().addAll(textField1, textField2, textField3, textField4, textField5);
 
-	}	
+		littleNbrList = new ArrayList<>();
 
-	private void CreateLittleCssClass()
-	{
-		textField1.getStyleClass().add(littlefieldClass);
-		textField2.getStyleClass().add(littlefieldClass);
-		textField3.getStyleClass().add(littlefieldClass);
-		textField4.getStyleClass().add(littlefieldClass);
-		textField5.getStyleClass().add(littlefieldClass);
-		
-		textField1.setId("littleField1");
-		textField2.setId("littleField2");
-		textField3.setId("littleField3");
-		textField4.setId("littleField4");
-		textField5.setId("littleField5");
+		for (int i = 0; i < 5; i++)
+		{
+			LittleNumber littleNbr = new LittleNumber();
+			littleNbrList.add(littleNbr);
+			littleNbrGroup.getChildren().add(littleNbr.getTextField());
+		}
+
 	}
-	
+
+	private void setCssIdAndClass()
+	{
+		for (LittleNumber littleNbr : littleNbrList)
+		{
+			littleNbr.getTextField().getStyleClass().add(littlefieldClass);
+		}
+
+		littleNbrList.get(0).getTextField().setId("littleField1");
+		littleNbrList.get(1).getTextField().setId("littleField2");
+		littleNbrList.get(2).getTextField().setId("littleField3");
+		littleNbrList.get(3).getTextField().setId("littleField4");
+		littleNbrList.get(4).getTextField().setId("littleField5");
+
+	}
+
 	private void littleNbrPosition()
 	{
-		textField1.setTranslateY(22);
-		textField2.setTranslateY(22);
-		textField2.setTranslateX(89);
-		//textField3.setTranslateX(45);		
-		textField4.setTranslateY(-22);
-		textField5.setTranslateY(-22);		
-		textField5.setTranslateX(89);		
+
+		littleNbrList.get(0).getTextField().setTranslateY(22);
+		littleNbrList.get(1).getTextField().setTranslateY(22);
+		littleNbrList.get(1).getTextField().setTranslateX(89);
+		littleNbrList.get(2).getTextField().setTranslateX(13);
+		littleNbrList.get(3).getTextField().setTranslateY(-22);
+		littleNbrList.get(4).getTextField().setTranslateY(-22);
+		littleNbrList.get(4).getTextField().setTranslateX(89);
 	}
 
-	
-		
-	
-
+	public ArrayList<LittleNumber> getLittleNbrList()
+	{
+		return littleNbrList;
+	}
 
 }

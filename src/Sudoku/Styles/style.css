@@ -36,17 +36,18 @@
   -fx-font-size: 10px;
   -fx-alignment: center ;
   -fx-background-color: #a6f5d5;
+   -fx-border-radius: 3;
  
 
   
 }
 
 #littleField3{
-   -fx-min-width: 119;
+   -fx-min-width: 95;
   -fx-min-height: 22;
-   -fx-max-width: 119;
+   -fx-max-width: 95;
   -fx-max-height: 22;
-  -fx-translateX : 50;
+  /* -fx-translateX : 50; */
  
   
 }
