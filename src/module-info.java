@@ -5,4 +5,5 @@ module Sudoku
 	requires javafx.base;
 	requires javafx.controls;
 	requires transitive javafx.graphics;
+	requires java.desktop;
 }

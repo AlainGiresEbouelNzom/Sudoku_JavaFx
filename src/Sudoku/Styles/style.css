@@ -1,30 +1,58 @@
-.text-field {
-  -fx-focus-color: #4f3f88;
-
-  -fx-padding: 10;
-  -fx-border-style: solid inside;
-
-  -fx-border-radius: 5;
-  -fx-border-color: rgb(65, 187, 218);
-  -fx-max-width: 150;
-
-  -fx-min-height: 100;
-  -fx-font-size: 20px;
+.textfield {
+  
+  -fx-border-style: solid inside; 
+  -fx-border-color: #27cfec;  
+  -fx-min-width: 120;
+  -fx-min-height: 70;
+  -fx-max-width: 120;
+  -fx-max-height: 70;
+  -fx-font-size: 25px;
+  -fx-padding: 1px ;
+  fx-border-width: 0.5px;
+   -fx-alignment: center ;
 }
+
+
 .LsudokuClass {
-  fx-border-width: 2px;
-
-  -fx-border-style: solid inside;
-  -fx-border-width: 2;
-
+  fx-border-width: 6px;
+  -fx-border-style: solid; 
   -fx-border-radius: 5;
-  -fx-border-color: blue;
+  -fx-border-color:red;
+   -fx-min-width: 360;
+  -fx-min-height: 210;
+   -fx-max-width: 350;
+  -fx-max-height: 210;
+
+   
+    -fx-border-insets: 5px;
+    -fx-background-insets: 5px;
 }
 
-
-  -fx-min-height: 20;
+.littlefield{
+  -fx-min-width: 29;
+  -fx-min-height: 22;
+   -fx-max-width: 29;
+  -fx-max-height: 22;
   -fx-font-size: 10px;
+  -fx-alignment: center ;
+  -fx-background-color: #a6f5d5;
+ 
+
+  
 }
+
+#littleField3{
+   -fx-min-width: 119;
+  -fx-min-height: 22;
+   -fx-max-width: 119;
+  -fx-max-height: 22;
+  -fx-translateX : 50;
+ 
+  
+}
+
+
 
 .root {
+ -fx-padding: 10px ;
 }
