@@ -5,7 +5,6 @@ import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.scene.Node;
 import javafx.scene.Scene;
-import javafx.scene.control.TextField;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.HBox;
@@ -28,7 +27,17 @@ public class MainApp extends Application
 		Scene scene =  new Scene(root);
 		scene.getStylesheets().add(getClass().getResource("/Sudoku/Styles/style.css").toString());	
 		
+		eventMethode(sudoku);
 		
+		primaryStage.setScene(scene);
+		primaryStage.show();
+		primaryStage.setTitle("Sudoku");
+		
+	}
+	
+	
+	private void eventMethode(Sudoku sudoku)
+	{
 		/*Changement de vue*/			
 		for (LitltleSudoku ls   : sudoku.getLittleSudokuList())
 		{
@@ -105,11 +114,6 @@ public class MainApp extends Application
 				});
 			}
 		}		
-		
-		
-		primaryStage.setScene(scene);
-		primaryStage.show();
-		primaryStage.setTitle("Sudoku");
 		
 	}
 	public static void main(String[] args)
