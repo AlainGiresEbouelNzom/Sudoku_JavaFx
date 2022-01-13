@@ -113,56 +113,106 @@ public class BackupSystem
 
 	}
 
-	/*
-	 * public static void Load() throws TransformerException,
-	 * ParserConfigurationException { DocumentBuilderFactory docFactory =
-	 * DocumentBuilderFactory.newInstance(); DocumentBuilder docBuilder =
-	 * docFactory.newDocumentBuilder();
-	 * 
-	 * FileInputStream input = new FileInputStream("save.xml"); String data =
-	 * input.toString();
-	 * 
-	 * 
-	 * 
-	 * ArrayList<String> dataList = new ArrayList<String>(); int i = 0;
-	 * 
-	 * Document gameData = docBuilder.newDocument(); //XmlDocument gameData = new
-	 * XmlDocument();
-	 * 
-	 * 
-	 * gameData.setXmlVersion(data);
-	 * 
-	 * for ( Node little : gameData.getc ("/Sudoku/LittleSudoku/ChildLittleSudoku"))
-	 * { foreach (XmlNode individual in little.SelectNodes("IndividualCase")) {
-	 * dataList.Add(individual.Attributes["id3"].Value);
-	 * dataList.Add(individual.Attributes["id2"].Value);
-	 * 
-	 * foreach (XmlNode lnumber in individual.SelectNodes("LNumbers")) { if
-	 * (lnumber.Attributes["lnumber"].Value == "") dataList.Add("0"); else
-	 * dataList.Add(lnumber.Attributes["lnumber"].Value); } } }
-	 * 
-	 * foreach (LittleSudokuGridViewModel little in
-	 * SudokuGridViewModel.littleGridViewModels) { foreach (IndividualCaseViewModel
-	 * ind in little.IndividualCaseViewModels) { if (dataList[i] == "0") {
-	 * ind.bnvm.BigNumber = ""; i++; } else { ind.bnvm.BigNumber = dataList[i++]; }
-	 * ind.CurrentColor = dataList[i++];
-	 * 
-	 * string[] arrayLnumber = new string[ind.lnvm.GetNumbers().Count];
-	 * 
-	 * 
-	 * for (int j = 0; j < ind.lnvm.GetNumbers().Count; j++) { if (dataList[i] ==
-	 * "0") { arrayLnumber[j] = ""; i++; } else { arrayLnumber[j] = dataList[i++]; }
-	 * }
-	 * 
-	 * ind.lnvm.LittleNumber1 = arrayLnumber[0]; ind.lnvm.LittleNumber2 =
-	 * arrayLnumber[1]; ind.lnvm.LittleNumber3 = arrayLnumber[2];
-	 * ind.lnvm.LittleNumber4 = arrayLnumber[3]; ind.lnvm.LittleNumber5 =
-	 * arrayLnumber[4];
-	 * 
-	 * } }
-	 * 
-	 * }
-	 */
+	public static void Load(ArrayList<LitltleSudoku> listOfLittleNumber)
+			throws TransformerException, ParserConfigurationException
+	{
+
+		for (LitltleSudoku l : listOfLittleNumber)
+		{
+			for (IndividualCase ind : l.getIndividualCaseList())
+			{
+				if (!ind.getBigTextField().getText().trim().equals(""))
+				{
+					ind.setColor(MainApp.colorRandom());
+
+					for (LittleNumber LNumber : ind.getLittleNbrList())
+					{
+						if (!LNumber.getTextField().getText().trim().equals(""))
+							LNumber.setColor(MainApp.colorRandom());
+
+					}
+				}
+			}
+
+		}
+	}
+
+//	/*	DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
+//		DocumentBuilder docBuilder = docFactory.newDocumentBuilder();
+//		
+//		FileInputStream input = new FileInputStream("save.xml");
+//		String data = input.toString();
+//
+//	
+//
+//        ArrayList<String> dataList = new ArrayList<String>();
+//        int i = 0;
+//
+//        Document gameData = docBuilder.newDocument();
+//        //XmlDocument gameData = new XmlDocument();*/
+//        
+//
+//        //gameData.setXmlVersion(data);
+//
+//        for ( Node little : gameData.getc ("/Sudoku/LittleSudoku/ChildLittleSudoku"))
+//        {
+//            foreach (XmlNode individual in little.SelectNodes("IndividualCase"))
+//            {
+//                dataList.Add(individual.Attributes["id3"].Value);
+//                dataList.Add(individual.Attributes["id2"].Value);
+//
+//                foreach (XmlNode lnumber in individual.SelectNodes("LNumbers"))
+//                {
+//                    if (lnumber.Attributes["lnumber"].Value == "")
+//                        dataList.Add("0");
+//                    else
+//                        dataList.Add(lnumber.Attributes["lnumber"].Value);
+//                }
+//            }
+//        }
+//        
+//        foreach (LittleSudokuGridViewModel little in SudokuGridViewModel.littleGridViewModels)
+//        {
+//            foreach (IndividualCaseViewModel ind in little.IndividualCaseViewModels)
+//            {
+//                if (dataList[i] == "0")
+//                {
+//                    ind.bnvm.BigNumber = "";
+//                    i++;
+//                }
+//                else
+//                {
+//                    ind.bnvm.BigNumber = dataList[i++];
+//                }
+//                ind.CurrentColor = dataList[i++];
+//
+//                string[] arrayLnumber = new string[ind.lnvm.GetNumbers().Count];
+//                
+//
+//                for (int j = 0; j < ind.lnvm.GetNumbers().Count; j++)
+//                {
+//                    if (dataList[i] == "0")
+//                    {
+//                        arrayLnumber[j] = "";
+//                        i++;
+//                    }
+//                    else
+//                    {
+//                        arrayLnumber[j] = dataList[i++];
+//                    }
+//                }
+//                
+//                ind.lnvm.LittleNumber1 = arrayLnumber[0];
+//                ind.lnvm.LittleNumber2 = arrayLnumber[1];
+//                ind.lnvm.LittleNumber3 = arrayLnumber[2];
+//                ind.lnvm.LittleNumber4 = arrayLnumber[3];
+//                ind.lnvm.LittleNumber5 = arrayLnumber[4];
+//                                   
+//            }
+//        }
+//        
+//    }
+
 	// write doc to output stream
 	private static void writeXml(Document doc, OutputStream output) throws TransformerException
 	{

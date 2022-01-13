@@ -22,8 +22,8 @@ import javafx.stage.Stage;
 
 public class MainApp extends Application
 {
-	Button save = new Button("Save");
-	Button load = new Button("Load");
+	Button saveButton = new Button("Save");
+	Button loadButton = new Button("Load");
 
 	@Override
 	public void start(Stage primaryStage) throws Exception
@@ -33,7 +33,7 @@ public class MainApp extends Application
 
 		VBox group = new VBox(20);
 
-		group.getChildren().addAll(save, load);
+		group.getChildren().addAll(saveButton, loadButton);
 		group.setPadding(new Insets(15));
 
 		root.getChildren().addAll(sudoku.getVbox1(), sudoku.getVbox2(), sudoku.getVbox3(), group);
@@ -51,7 +51,7 @@ public class MainApp extends Application
 
 	private void buttonsEvents(Sudoku sudoku)
 	{
-		save.setOnAction(new EventHandler<ActionEvent>()
+		saveButton.setOnAction(new EventHandler<ActionEvent>()
 		{
 
 			@Override
@@ -60,6 +60,28 @@ public class MainApp extends Application
 				try
 				{
 					BackupSystem.Save(sudoku.getLittleSudokuList());
+				} catch (TransformerException e)
+				{
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				} catch (ParserConfigurationException e)
+				{
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+
+			}
+		});
+
+		loadButton.setOnAction(new EventHandler<ActionEvent>()
+		{
+
+			@Override
+			public void handle(ActionEvent arg0)
+			{
+				try
+				{
+					BackupSystem.Load(sudoku.getLittleSudokuList());
 				} catch (TransformerException e)
 				{
 					// TODO Auto-generated catch block
@@ -207,7 +229,7 @@ public class MainApp extends Application
 		}
 	}
 
-	private String colorRandom()
+	public static String colorRandom()
 	{
 		String[] colors = new String[8];
 
