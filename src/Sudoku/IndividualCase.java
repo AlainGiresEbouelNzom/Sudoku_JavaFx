@@ -4,7 +4,10 @@ import java.util.ArrayList;
 
 import javafx.scene.Group;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.StackPane;
+import javafx.scene.paint.Color;
 
 public class IndividualCase
 {
@@ -16,6 +19,18 @@ public class IndividualCase
 	private static final String littlefieldClass = "littlefield";
 	private StackPane stackPane;
 	private ArrayList<LittleNumber> littleNbrList;
+	private String color;
+
+	public String getColor()
+	{
+		return color;
+	}
+
+	public void setColor(String color)
+	{
+		this.color = color;
+		bigTextField.setBackground(new Background(new BackgroundFill(Color.web(color), null, null)));
+	}
 
 	public IndividualCase(int id)
 	{
