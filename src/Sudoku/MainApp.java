@@ -13,8 +13,14 @@ import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
+import javafx.scene.layout.Border;
+import javafx.scene.layout.BorderStroke;
+import javafx.scene.layout.BorderStrokeStyle;
+import javafx.scene.layout.BorderWidths;
+import javafx.scene.layout.CornerRadii;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
@@ -24,6 +30,8 @@ public class MainApp extends Application
 {
 	Button saveButton = new Button("Save");
 	Button loadButton = new Button("Load");
+	Button UndoButton = new Button("Undo");
+	Button RedoButton = new Button("Redo");
 
 	@Override
 	public void start(Stage primaryStage) throws Exception
@@ -33,7 +41,7 @@ public class MainApp extends Application
 
 		VBox group = new VBox(20);
 
-		group.getChildren().addAll(saveButton, loadButton);
+		group.getChildren().addAll(saveButton, loadButton, UndoButton, RedoButton);
 		group.setPadding(new Insets(15));
 
 		root.getChildren().addAll(sudoku.getVbox1(), sudoku.getVbox2(), sudoku.getVbox3(), group);
@@ -41,7 +49,7 @@ public class MainApp extends Application
 		Scene scene = new Scene(root);
 		scene.getStylesheets().add(getClass().getResource("/Sudoku/Styles/style.css").toString());
 
-		allEvents(sudoku);
+		allEvents(sudoku, root);
 		buttonsEvents(sudoku);
 
 		primaryStage.setScene(scene);
@@ -95,9 +103,26 @@ public class MainApp extends Application
 			}
 		});
 
+		UndoButton.setOnAction(new EventHandler<ActionEvent>()
+		{
+			@Override
+			public void handle(ActionEvent arg0)
+			{
+				BackupSystem.Undo();
+			}
+		});
+
+		RedoButton.setOnAction(new EventHandler<ActionEvent>()
+		{
+			@Override
+			public void handle(ActionEvent arg0)
+			{
+				BackupSystem.Redo();
+			}
+		});
 	}
 
-	private void allEvents(Sudoku sudoku)
+	private void allEvents(Sudoku sudoku, HBox root)
 	{
 		/* Changement de vue */
 		for (LitltleSudoku ls : sudoku.getLittleSudokuList())
@@ -115,6 +140,9 @@ public class MainApp extends Application
 							ind.getBigTextField().toBack();
 							Lnbr.getTextField().setBackground(new Background(
 									new BackgroundFill(Color.web("rgb(245, 185, 213)"), null, null)));
+							Lnbr.getTextField().setBorder(
+									new Border(new BorderStroke(Color.RED, BorderStrokeStyle.SOLID,
+											CornerRadii.EMPTY, new BorderWidths(3))));
 						}
 					});
 
@@ -144,6 +172,9 @@ public class MainApp extends Application
 						{
 							Lnbr.getTextField().setBackground(new Background(
 									new BackgroundFill(Color.web(colorRandom()), null, null)));
+							Lnbr.getTextField().setBorder(
+									new Border(new BorderStroke(Color.RED, BorderStrokeStyle.SOLID,
+											CornerRadii.EMPTY, new BorderWidths(3))));
 						}
 					});
 				}
@@ -170,17 +201,44 @@ public class MainApp extends Application
 					}
 				});
 
-				/* Application du click de la souris au bigTextField */
-				ind.getBigTextField().setOnMousePressed(new EventHandler<Event>()
+				ind.getBigTextField().setOnMouseClicked(new EventHandler<MouseEvent>()
 				{
 
 					@Override
-					public void handle(Event arg0)
+
+					public void handle(MouseEvent e)
 					{
-						ind.getBigTextField().toFront();
-						ind.setColor("rgb(245, 05, 213)");
+						if (e.isControlDown())
+						{
+							ind.getBigTextField().toFront();
+							ind.getBigTextField().setBorder(new Border(new BorderStroke(Color.RED,
+									BorderStrokeStyle.SOLID, null, new BorderWidths(3))));
+							BackupSystem.SaveOnStacks(ind);
+//							ind.getTextField().setBackground(new Background(
+//									new BackgroundFill(Color.web(colorRandom()), null, null)));
+
+						}
+						// TODO Auto-generated method stub
+
 					}
 				});
+
+				/* Application du click de la souris au bigTextField */
+				/*
+				 * ind.getBigTextField().setOnMousePressed(new EventHandler<Event>() {
+				 * 
+				 * public void handle(MouseEvent arg0) { if() ind.getBigTextField().toFront();
+				 * ind.getBigTextField().setBorder(new Border(new BorderStroke(Color.RED,
+				 * BorderStrokeStyle.DOTTED, null, new BorderWidths(3))));
+				 * BackupSystem.SaveOnStacks(ind); ind.getTextField().setBackground(new
+				 * Background( new BackgroundFill(Color.web(colorRandom()), null, null)));
+				 * 
+				 * }
+				 * 
+				 * @Override public void handle(Event arg0) { // TODO Auto-generated method stub
+				 * 
+				 * } });
+				 */
 
 				/* Évènement Saisi d'un bigNumber par l'utilisateur */
 				ind.getBigTextField().setOnKeyReleased(new EventHandler<Event>()
@@ -188,6 +246,8 @@ public class MainApp extends Application
 					@Override
 					public void handle(Event arg0)
 					{
+						ind.getTextField().setBackground(new Background(
+								new BackgroundFill(Color.web(colorRandom()), null, null)));
 //						verification(sudoku, ind);
 //						try
 //						{

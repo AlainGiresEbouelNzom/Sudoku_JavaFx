@@ -13,6 +13,7 @@ public class LittleNumber
 	public LittleNumber()
 	{
 		this.textField = new TextField();
+		// textField.setText(" ");
 
 	}
 

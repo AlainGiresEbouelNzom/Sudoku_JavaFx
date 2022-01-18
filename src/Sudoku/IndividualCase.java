@@ -75,6 +75,16 @@ public class IndividualCase
 		return stackPane;
 	}
 
+	public String getText()
+	{
+		return bigTextField.getText();
+	}
+
+	/*
+	 * public void setBigTextField(TextField bigTextField) { this.bigTextField =
+	 * bigTextField; }
+	 */
+
 	private void init()
 	{
 		this.stackPane = new StackPane();

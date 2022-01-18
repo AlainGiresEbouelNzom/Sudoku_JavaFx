@@ -2,16 +2,9 @@
 <Sudoku>
     <LittleSudoku>
         <ChildLittleSudoku>
-            <IndividualCase id2="" id3="">
+            <IndividualCase id2="rgb(245, 05, 213)" id3="1">
                 <LNumbers lnumber=""/>
-                <LNumbers lnumber=""/>
-                <LNumbers lnumber=""/>
-                <LNumbers lnumber=""/>
-                <LNumbers lnumber=""/>
-            </IndividualCase>
-            <IndividualCase id2="" id3="">
-                <LNumbers lnumber=""/>
-                <LNumbers lnumber=""/>
+                <LNumbers lnumber="3"/>
                 <LNumbers lnumber=""/>
                 <LNumbers lnumber=""/>
                 <LNumbers lnumber=""/>
@@ -30,14 +23,21 @@
                 <LNumbers lnumber=""/>
                 <LNumbers lnumber=""/>
             </IndividualCase>
-            <IndividualCase id2="rgb(245, 05, 213)" id3="">
+            <IndividualCase id2="" id3="">
                 <LNumbers lnumber=""/>
                 <LNumbers lnumber=""/>
-                <LNumbers lnumber="6"/>
+                <LNumbers lnumber=""/>
                 <LNumbers lnumber=""/>
                 <LNumbers lnumber=""/>
             </IndividualCase>
-            <IndividualCase id2="rgb(245, 05, 213)" id3="">
+            <IndividualCase id2="" id3="">
+                <LNumbers lnumber=""/>
+                <LNumbers lnumber=""/>
+                <LNumbers lnumber=""/>
+                <LNumbers lnumber=""/>
+                <LNumbers lnumber=""/>
+            </IndividualCase>
+            <IndividualCase id2="" id3="">
                 <LNumbers lnumber=""/>
                 <LNumbers lnumber=""/>
                 <LNumbers lnumber=""/>
@@ -67,27 +67,6 @@
             </IndividualCase>
         </ChildLittleSudoku>
         <ChildLittleSudoku>
-            <IndividualCase id2="" id3="">
-                <LNumbers lnumber=""/>
-                <LNumbers lnumber=""/>
-                <LNumbers lnumber=""/>
-                <LNumbers lnumber=""/>
-                <LNumbers lnumber=""/>
-            </IndividualCase>
-            <IndividualCase id2="" id3="">
-                <LNumbers lnumber=""/>
-                <LNumbers lnumber=""/>
-                <LNumbers lnumber=""/>
-                <LNumbers lnumber=""/>
-                <LNumbers lnumber=""/>
-            </IndividualCase>
-            <IndividualCase id2="" id3="">
-                <LNumbers lnumber=""/>
-                <LNumbers lnumber=""/>
-                <LNumbers lnumber=""/>
-                <LNumbers lnumber=""/>
-                <LNumbers lnumber=""/>
-            </IndividualCase>
             <IndividualCase id2="" id3="">
                 <LNumbers lnumber=""/>
                 <LNumbers lnumber=""/>
@@ -130,6 +109,157 @@
                 <LNumbers lnumber=""/>
                 <LNumbers lnumber=""/>
             </IndividualCase>
+            <IndividualCase id2="" id3="">
+                <LNumbers lnumber=""/>
+                <LNumbers lnumber=""/>
+                <LNumbers lnumber=""/>
+                <LNumbers lnumber=""/>
+                <LNumbers lnumber=""/>
+            </IndividualCase>
+            <IndividualCase id2="" id3="">
+                <LNumbers lnumber=""/>
+                <LNumbers lnumber=""/>
+                <LNumbers lnumber=""/>
+                <LNumbers lnumber=""/>
+                <LNumbers lnumber=""/>
+            </IndividualCase>
+            <IndividualCase id2="" id3="">
+                <LNumbers lnumber=""/>
+                <LNumbers lnumber=""/>
+                <LNumbers lnumber=""/>
+                <LNumbers lnumber=""/>
+                <LNumbers lnumber=""/>
+            </IndividualCase>
+        </ChildLittleSudoku>
+        <ChildLittleSudoku>
+            <IndividualCase id2="" id3="">
+                <LNumbers lnumber=""/>
+                <LNumbers lnumber=""/>
+                <LNumbers lnumber=""/>
+                <LNumbers lnumber=""/>
+                <LNumbers lnumber=""/>
+            </IndividualCase>
+            <IndividualCase id2="" id3="">
+                <LNumbers lnumber=""/>
+                <LNumbers lnumber=""/>
+                <LNumbers lnumber=""/>
+                <LNumbers lnumber=""/>
+                <LNumbers lnumber=""/>
+            </IndividualCase>
+            <IndividualCase id2="" id3="">
+                <LNumbers lnumber=""/>
+                <LNumbers lnumber=""/>
+                <LNumbers lnumber=""/>
+                <LNumbers lnumber=""/>
+                <LNumbers lnumber=""/>
+            </IndividualCase>
+            <IndividualCase id2="" id3="">
+                <LNumbers lnumber=""/>
+                <LNumbers lnumber=""/>
+                <LNumbers lnumber=""/>
+                <LNumbers lnumber=""/>
+                <LNumbers lnumber=""/>
+            </IndividualCase>
+            <IndividualCase id2="" id3="">
+                <LNumbers lnumber=""/>
+                <LNumbers lnumber=""/>
+                <LNumbers lnumber=""/>
+                <LNumbers lnumber=""/>
+                <LNumbers lnumber=""/>
+            </IndividualCase>
+            <IndividualCase id2="" id3="">
+                <LNumbers lnumber=""/>
+                <LNumbers lnumber=""/>
+                <LNumbers lnumber=""/>
+                <LNumbers lnumber=""/>
+                <LNumbers lnumber=""/>
+            </IndividualCase>
+            <IndividualCase id2="" id3="">
+                <LNumbers lnumber=""/>
+                <LNumbers lnumber=""/>
+                <LNumbers lnumber=""/>
+                <LNumbers lnumber=""/>
+                <LNumbers lnumber=""/>
+            </IndividualCase>
+            <IndividualCase id2="" id3="">
+                <LNumbers lnumber=""/>
+                <LNumbers lnumber=""/>
+                <LNumbers lnumber=""/>
+                <LNumbers lnumber=""/>
+                <LNumbers lnumber=""/>
+            </IndividualCase>
+            <IndividualCase id2="" id3="">
+                <LNumbers lnumber=""/>
+                <LNumbers lnumber=""/>
+                <LNumbers lnumber=""/>
+                <LNumbers lnumber=""/>
+                <LNumbers lnumber=""/>
+            </IndividualCase>
+        </ChildLittleSudoku>
+        <ChildLittleSudoku>
+            <IndividualCase id2="" id3="">
+                <LNumbers lnumber=""/>
+                <LNumbers lnumber=""/>
+                <LNumbers lnumber=""/>
+                <LNumbers lnumber=""/>
+                <LNumbers lnumber=""/>
+            </IndividualCase>
+            <IndividualCase id2="" id3="">
+                <LNumbers lnumber=""/>
+                <LNumbers lnumber=""/>
+                <LNumbers lnumber=""/>
+                <LNumbers lnumber=""/>
+                <LNumbers lnumber=""/>
+            </IndividualCase>
+            <IndividualCase id2="" id3="">
+                <LNumbers lnumber=""/>
+                <LNumbers lnumber=""/>
+                <LNumbers lnumber=""/>
+                <LNumbers lnumber=""/>
+                <LNumbers lnumber=""/>
+            </IndividualCase>
+            <IndividualCase id2="" id3="">
+                <LNumbers lnumber=""/>
+                <LNumbers lnumber=""/>
+                <LNumbers lnumber=""/>
+                <LNumbers lnumber=""/>
+                <LNumbers lnumber=""/>
+            </IndividualCase>
+            <IndividualCase id2="" id3="">
+                <LNumbers lnumber=""/>
+                <LNumbers lnumber=""/>
+                <LNumbers lnumber=""/>
+                <LNumbers lnumber=""/>
+                <LNumbers lnumber=""/>
+            </IndividualCase>
+            <IndividualCase id2="" id3="">
+                <LNumbers lnumber=""/>
+                <LNumbers lnumber=""/>
+                <LNumbers lnumber=""/>
+                <LNumbers lnumber=""/>
+                <LNumbers lnumber=""/>
+            </IndividualCase>
+            <IndividualCase id2="" id3="">
+                <LNumbers lnumber=""/>
+                <LNumbers lnumber=""/>
+                <LNumbers lnumber=""/>
+                <LNumbers lnumber=""/>
+                <LNumbers lnumber=""/>
+            </IndividualCase>
+            <IndividualCase id2="" id3="">
+                <LNumbers lnumber=""/>
+                <LNumbers lnumber=""/>
+                <LNumbers lnumber=""/>
+                <LNumbers lnumber=""/>
+                <LNumbers lnumber=""/>
+            </IndividualCase>
+            <IndividualCase id2="" id3="">
+                <LNumbers lnumber=""/>
+                <LNumbers lnumber=""/>
+                <LNumbers lnumber=""/>
+                <LNumbers lnumber=""/>
+                <LNumbers lnumber=""/>
+            </IndividualCase>
         </ChildLittleSudoku>
         <ChildLittleSudoku>
             <IndividualCase id2="" id3="">
@@ -297,71 +427,6 @@
                 <LNumbers lnumber=""/>
                 <LNumbers lnumber=""/>
             </IndividualCase>
-            <IndividualCase id2="yellow" id3="j">
-                <LNumbers lnumber=""/>
-                <LNumbers lnumber=""/>
-                <LNumbers lnumber=""/>
-                <LNumbers lnumber=""/>
-                <LNumbers lnumber=""/>
-            </IndividualCase>
-            <IndividualCase id2="" id3="">
-                <LNumbers lnumber=""/>
-                <LNumbers lnumber=""/>
-                <LNumbers lnumber=""/>
-                <LNumbers lnumber=""/>
-                <LNumbers lnumber=""/>
-            </IndividualCase>
-            <IndividualCase id2="" id3="">
-                <LNumbers lnumber=""/>
-                <LNumbers lnumber=""/>
-                <LNumbers lnumber=""/>
-                <LNumbers lnumber=""/>
-                <LNumbers lnumber=""/>
-            </IndividualCase>
-            <IndividualCase id2="cyan" id3="h">
-                <LNumbers lnumber="3u"/>
-                <LNumbers lnumber=""/>
-                <LNumbers lnumber=""/>
-                <LNumbers lnumber="u"/>
-                <LNumbers lnumber=""/>
-            </IndividualCase>
-        </ChildLittleSudoku>
-        <ChildLittleSudoku>
-            <IndividualCase id2="" id3="">
-                <LNumbers lnumber=""/>
-                <LNumbers lnumber=""/>
-                <LNumbers lnumber=""/>
-                <LNumbers lnumber=""/>
-                <LNumbers lnumber=""/>
-            </IndividualCase>
-            <IndividualCase id2="" id3="">
-                <LNumbers lnumber=""/>
-                <LNumbers lnumber=""/>
-                <LNumbers lnumber=""/>
-                <LNumbers lnumber=""/>
-                <LNumbers lnumber=""/>
-            </IndividualCase>
-            <IndividualCase id2="" id3="">
-                <LNumbers lnumber=""/>
-                <LNumbers lnumber=""/>
-                <LNumbers lnumber=""/>
-                <LNumbers lnumber=""/>
-                <LNumbers lnumber=""/>
-            </IndividualCase>
-            <IndividualCase id2="" id3="">
-                <LNumbers lnumber=""/>
-                <LNumbers lnumber=""/>
-                <LNumbers lnumber=""/>
-                <LNumbers lnumber=""/>
-                <LNumbers lnumber=""/>
-            </IndividualCase>
-            <IndividualCase id2="" id3="">
-                <LNumbers lnumber=""/>
-                <LNumbers lnumber=""/>
-                <LNumbers lnumber=""/>
-                <LNumbers lnumber=""/>
-                <LNumbers lnumber=""/>
-            </IndividualCase>
             <IndividualCase id2="" id3="">
                 <LNumbers lnumber=""/>
                 <LNumbers lnumber=""/>
@@ -408,71 +473,6 @@
             </IndividualCase>
             <IndividualCase id2="" id3="">
                 <LNumbers lnumber=""/>
-                <LNumbers lnumber=""/>
-                <LNumbers lnumber=""/>
-                <LNumbers lnumber=""/>
-                <LNumbers lnumber=""/>
-            </IndividualCase>
-            <IndividualCase id2="" id3="">
-                <LNumbers lnumber=""/>
-                <LNumbers lnumber=""/>
-                <LNumbers lnumber=""/>
-                <LNumbers lnumber=""/>
-                <LNumbers lnumber=""/>
-            </IndividualCase>
-            <IndividualCase id2="" id3="">
-                <LNumbers lnumber=""/>
-                <LNumbers lnumber=""/>
-                <LNumbers lnumber=""/>
-                <LNumbers lnumber=""/>
-                <LNumbers lnumber=""/>
-            </IndividualCase>
-            <IndividualCase id2="" id3="">
-                <LNumbers lnumber=""/>
-                <LNumbers lnumber=""/>
-                <LNumbers lnumber=""/>
-                <LNumbers lnumber=""/>
-                <LNumbers lnumber=""/>
-            </IndividualCase>
-            <IndividualCase id2="" id3="">
-                <LNumbers lnumber=""/>
-                <LNumbers lnumber=""/>
-                <LNumbers lnumber=""/>
-                <LNumbers lnumber=""/>
-                <LNumbers lnumber=""/>
-            </IndividualCase>
-            <IndividualCase id2="" id3="">
-                <LNumbers lnumber=""/>
-                <LNumbers lnumber=""/>
-                <LNumbers lnumber=""/>
-                <LNumbers lnumber=""/>
-                <LNumbers lnumber=""/>
-            </IndividualCase>
-            <IndividualCase id2="" id3="">
-                <LNumbers lnumber=""/>
-                <LNumbers lnumber=""/>
-                <LNumbers lnumber=""/>
-                <LNumbers lnumber=""/>
-                <LNumbers lnumber=""/>
-            </IndividualCase>
-        </ChildLittleSudoku>
-        <ChildLittleSudoku>
-            <IndividualCase id2="" id3="">
-                <LNumbers lnumber=""/>
-                <LNumbers lnumber=""/>
-                <LNumbers lnumber=""/>
-                <LNumbers lnumber=""/>
-                <LNumbers lnumber=""/>
-            </IndividualCase>
-            <IndividualCase id2="" id3="">
-                <LNumbers lnumber=""/>
-                <LNumbers lnumber=""/>
-                <LNumbers lnumber=""/>
-                <LNumbers lnumber=""/>
-                <LNumbers lnumber=""/>
-            </IndividualCase>
-            <IndividualCase id2="" id3="">
-                <LNumbers lnumber="2"/>
                 <LNumbers lnumber=""/>
                 <LNumbers lnumber=""/>
                 <LNumbers lnumber=""/>

@@ -22,29 +22,58 @@ import org.w3c.dom.Element;
 
 public class BackupSystem
 {
-	private static Stack<String> UndoStack = new Stack<String>();
-	private static Stack<String> RedoStack = new Stack<String>();
+	private static Stack<BackupSystem> UndoStack = new Stack<BackupSystem>();
+	private static Stack<BackupSystem> RedoStack = new Stack<BackupSystem>();
 	private static boolean StackIsLocked;
 	private static boolean Undo_redo_is_Active;
+	private IndividualCase indCase;
+	private String text;
+	private String color;
 
-	/*
-	 * public static void Undo() { StackIsLocked = true; Undo_redo_is_Active = true;
-	 * RedoStack.push(UndoStack.pop());
-	 * 
-	 * Load(UndoStack.peek()); StackIsLocked = false; Undo_redo_is_Active = false; }
-	 * 
-	 * public static void Redo() { StackIsLocked = true; Undo_redo_is_Active = true;
-	 * UndoStack.push(RedoStack.pop());
-	 * 
-	 * Load(UndoStack.peek()); StackIsLocked = false; Undo_redo_is_Active = false; }
-	 */
+	public static void Undo()
+	{
+		if (UndoStack.size() > 0)
+		{
+			StackIsLocked = true;
+			Undo_redo_is_Active = true;
+			RedoStack.push(UndoStack.pop());
+			System.out.println(UndoStack.peek().getIndCase().getBigTextField().getText());
+			UndoStack.peek().getIndCase().getBigTextField().setText(UndoStack.peek().text);
+			System.out.println(UndoStack.peek().getIndCase().getBigTextField().getText());
+			UndoStack.peek().getIndCase().setColor(UndoStack.peek().color);
+		}
+	}
 
-	/*
-	 * public static void SaveOnStacks() { if (StackIsLocked == false) {
-	 * UndoStack.Push(Save(SudokuGridViewModel.littleGridViewModels));
-	 * 
-	 * if (RedoStack.size() > 0) { RedoStack.clear(); } } }
-	 */
+	public static void Redo()
+	{
+		StackIsLocked = true;
+		Undo_redo_is_Active = true;
+		UndoStack.push(RedoStack.pop());
+
+		UndoStack.peek().getIndCase().getBigTextField().setText(UndoStack.peek().text);
+		UndoStack.peek().getIndCase().setColor(UndoStack.peek().color);
+
+		/*
+		 * Load(UndoStack.peek()); StackIsLocked = false; Undo_redo_is_Active = false;
+		 */
+	}
+
+	public BackupSystem(int id, String text, String color, IndividualCase indCase)
+	{
+		this.indCase = indCase;
+		this.text = text;
+		this.color = color;
+	}
+
+	public static void SaveOnStacks(IndividualCase indCase)
+	{
+		UndoStack.push(new BackupSystem(indCase.getId(), indCase.getText(), indCase.getColor(), indCase));
+
+		if (RedoStack.size() > 0)
+		{
+			RedoStack.clear();
+		}
+	}
 
 	/*
 	 * public static void BackupActivation() { string DataToSave;
@@ -52,6 +81,21 @@ public class BackupSystem
 	 * DataToSave = Save(SudokuGridViewModel.littleGridViewModels);
 	 * File.WriteAllText(@"backupFile.txt", DataToSave); }
 	 */
+
+	public IndividualCase getIndCase()
+	{
+		return indCase;
+	}
+
+	public String getText()
+	{
+		return text;
+	}
+
+	public String getColor()
+	{
+		return color;
+	}
 
 	public static void Save(ArrayList<LitltleSudoku> listOfLittleNumber)
 			throws TransformerException, ParserConfigurationException

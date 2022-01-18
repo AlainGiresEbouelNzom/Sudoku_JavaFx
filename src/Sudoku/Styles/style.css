@@ -47,6 +47,7 @@
   -fx-min-height: 22;
    -fx-max-width: 95;
   -fx-max-height: 22;
+    -fx-border-color:red;  
   /* -fx-translateX : 50; */
  
   
