@@ -35,8 +35,7 @@ public class MainApp extends Application
 	Button loadButton = new Button("Load");
 	Button UndoButton = new Button("Undo");
 	Button RedoButton = new Button("Redo");
-	ChoiceDialog<BoderrColor> borderChoice ;
-	private IndividualCase currentIndCase ;;
+	ChoiceDialog<Rectangle> borderChoice = new ChoiceDialog<Rectangle>();;
 
 	@Override
 	public void start(Stage primaryStage) throws Exception
@@ -56,7 +55,7 @@ public class MainApp extends Application
 
 		allEvents(sudoku, root);
 		buttonsEvents(sudoku);
-		initBorderChoice();
+		
 		primaryStage.setScene(scene);
 		borderChoice.initOwner(primaryStage);
 		primaryStage.show();
@@ -65,10 +64,13 @@ public class MainApp extends Application
 
 	private void initBorderChoice()
 	{
-		BoderrColor rect1 = new BoderrColor (200, 20, Color.AQUA);
-		
-		BoderrColor rect2 = new Rectangle(200, 20);
-		rect2.setFill(, Color.AQUAMARINE);
+		Button b1 = new Button();
+		b1.setBackground(new Background(new BackgroundFill(null, null, null)));
+
+		Rectangle rect1 = new Rectangle(200, 20);
+		rect1.setFill(Color.AQUA);
+		Rectangle rect2 = new Rectangle(200, 20);
+		rect2.setFill(Color.AQUAMARINE);
 		Rectangle rect3 = new Rectangle(200, 20);
 		rect3.setFill(Color.BEIGE);
 		Rectangle rect4 = new Rectangle(200, 20);
@@ -303,11 +305,14 @@ public class MainApp extends Application
 					@Override
 					public void handle(ActionEvent arg0)
 					{
-						
+						initBorderChoice();
 						Optional<Rectangle> border = borderChoice.showAndWait();
 						border.ifPresent(e->{
+							ind.getTextField().setBorder(
+									new Border(new BorderStroke(Color.web(colorRandom()), BorderStrokeStyle.SOLID,
+											CornerRadii.EMPTY, new BorderWidths(3))));
 							ind.getTextField().setBackground(new Background(
-									new BackgroundFill(Color.web("rgb(245, 185, 213)"), null, null)));
+									new BackgroundFill(e.getFill(), null, null)));
 						});
 						SetIndividualCaseBorder(ind);
 					}
