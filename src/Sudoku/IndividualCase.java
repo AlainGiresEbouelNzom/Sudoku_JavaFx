@@ -2,17 +2,21 @@ package Sudoku;
 
 import java.util.ArrayList;
 
+import javafx.geometry.Insets;
 import javafx.scene.Group;
+import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
 
 public class IndividualCase
 {
 	private TextField bigTextField;
-
+	private HBox hbox ;
+	private Button borderButton;
 	private Group littleNbrGroup;
 	private int id;
 	private static final String textfieldClass = "textfield";
@@ -41,6 +45,8 @@ public class IndividualCase
 		bigTextField.getStyleClass().add(textfieldClass);
 
 		stackPane.getChildren().addAll(littleNbrGroup, bigTextField);
+		
+		hbox.getChildren().addAll(stackPane, borderButton);
 
 		// littleNbrGroup.toFront();
 
@@ -48,6 +54,16 @@ public class IndividualCase
 
 		littleNbrPosition();
 
+	}
+
+	public HBox getHbox()
+	{
+		return hbox;
+	}
+
+	public Button getBorderButton()
+	{
+		return borderButton;
 	}
 
 	public Group getLittleNbrGroup()
@@ -92,8 +108,13 @@ public class IndividualCase
 		bigTextField = new TextField();
 
 		littleNbrGroup = new Group();
+		
+		hbox =  new HBox();
+		
+		borderButton =  new Button();
 
 		littleNbrList = new ArrayList<>();
+		
 
 		for (int i = 0; i < 5; i++)
 		{
@@ -116,6 +137,7 @@ public class IndividualCase
 		littleNbrList.get(2).getTextField().setId("littleField3");
 		littleNbrList.get(3).getTextField().setId("littleField4");
 		littleNbrList.get(4).getTextField().setId("littleField5");
+		borderButton.getStyleClass().add("borderButton");
 
 	}
 

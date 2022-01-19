@@ -58,7 +58,7 @@ public class LitltleSudoku
 		{
 			IndividualCase indCase = new IndividualCase(Sudoku.getIndividualCaseId());
 			individualCaseList.add(indCase);
-			vbox.getChildren().add(indCase.getStackPane());
+			vbox.getChildren().add(indCase.getHbox());
 
 		}
 	}

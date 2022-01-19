@@ -1,6 +1,7 @@
 package Sudoku;
 
 import java.util.ArrayList;
+import java.util.Optional;
 import java.util.Random;
 
 import javax.xml.parsers.ParserConfigurationException;
@@ -13,6 +14,7 @@ import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ChoiceDialog;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
@@ -24,6 +26,7 @@ import javafx.scene.layout.CornerRadii;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
+import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 
 public class MainApp extends Application
@@ -32,6 +35,8 @@ public class MainApp extends Application
 	Button loadButton = new Button("Load");
 	Button UndoButton = new Button("Undo");
 	Button RedoButton = new Button("Redo");
+	ChoiceDialog<BoderrColor> borderChoice ;
+	private IndividualCase currentIndCase ;;
 
 	@Override
 	public void start(Stage primaryStage) throws Exception
@@ -42,7 +47,7 @@ public class MainApp extends Application
 		VBox group = new VBox(20);
 
 		group.getChildren().addAll(saveButton, loadButton, UndoButton, RedoButton);
-		group.setPadding(new Insets(15));
+		group.setPadding(new Insets(75));
 
 		root.getChildren().addAll(sudoku.getVbox1(), sudoku.getVbox2(), sudoku.getVbox3(), group);
 
@@ -51,10 +56,39 @@ public class MainApp extends Application
 
 		allEvents(sudoku, root);
 		buttonsEvents(sudoku);
-
+		initBorderChoice();
 		primaryStage.setScene(scene);
+		borderChoice.initOwner(primaryStage);
 		primaryStage.show();
 		primaryStage.setTitle("Sudoku");
+	}
+
+	private void initBorderChoice()
+	{
+		BoderrColor rect1 = new BoderrColor (200, 20, Color.AQUA);
+		
+		BoderrColor rect2 = new Rectangle(200, 20);
+		rect2.setFill(, Color.AQUAMARINE);
+		Rectangle rect3 = new Rectangle(200, 20);
+		rect3.setFill(Color.BEIGE);
+		Rectangle rect4 = new Rectangle(200, 20);
+		rect4.setFill(Color.BLUE);
+		Rectangle rect5 = new Rectangle(200, 20);
+		rect5.setFill(Color.BROWN);
+		Rectangle rect6 = new Rectangle(200, 20);
+		rect6.setFill(Color.CHARTREUSE);
+		Rectangle rect7 = new Rectangle(200, 20);
+		rect7.setFill(Color.DARKGRAY);
+		Rectangle rect8 = new Rectangle(200, 20);
+		rect8.setFill(Color.DARKMAGENTA);
+		Rectangle rect9 = new Rectangle(200, 20);
+		rect9.setFill(Color.PINK);
+		Rectangle rect10 = new Rectangle(200, 20);
+		rect10.setFill(null);
+		
+	this.borderChoice = new ChoiceDialog<>(rect10, rect1, rect2, rect3, rect2, rect4, rect5, rect6, rect7, rect8, rect9);
+		
+		
 	}
 
 	private void buttonsEvents(Sudoku sudoku)
@@ -80,6 +114,8 @@ public class MainApp extends Application
 
 			}
 		});
+		
+		
 
 		loadButton.setOnAction(new EventHandler<ActionEvent>()
 		{
@@ -259,11 +295,38 @@ public class MainApp extends Application
 					}
 
 				});
+				
+				ind.getBorderButton().setOnAction(new EventHandler<ActionEvent>()
+				{
+
+
+					@Override
+					public void handle(ActionEvent arg0)
+					{
+						
+						Optional<Rectangle> border = borderChoice.showAndWait();
+						border.ifPresent(e->{
+							ind.getTextField().setBackground(new Background(
+									new BackgroundFill(Color.web("rgb(245, 185, 213)"), null, null)));
+						});
+						SetIndividualCaseBorder(ind);
+					}
+
+				
+
+					
+				});
 
 			}
 		}
 	}
 
+	private void SetIndividualCaseBorder(IndividualCase ind)
+	{
+		
+		
+	}
+	
 	private void verification(Sudoku sudoku, IndividualCase ind)
 	{
 		ArrayList<IndividualCase> IndCaseList = new ArrayList<>();
