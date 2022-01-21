@@ -53,9 +53,12 @@ public class MainApp extends Application
 		Scene scene = new Scene(root);
 		scene.getStylesheets().add(getClass().getResource("/Sudoku/Styles/style.css").toString());
 
+		borderChoice.setContentText("Please select a color");
+		borderChoice.setTitle("Color selection");
+
 		allEvents(sudoku, root);
 		buttonsEvents(sudoku);
-		
+
 		primaryStage.setScene(scene);
 		borderChoice.initOwner(primaryStage);
 		primaryStage.show();
@@ -87,10 +90,13 @@ public class MainApp extends Application
 		rect9.setFill(Color.PINK);
 		Rectangle rect10 = new Rectangle(200, 20);
 		rect10.setFill(null);
-		
-	this.borderChoice = new ChoiceDialog<>(rect10, rect1, rect2, rect3, rect2, rect4, rect5, rect6, rect7, rect8, rect9);
-		
-		
+
+		this.borderChoice = new ChoiceDialog<>(rect10, rect1, rect2, rect3, rect2, rect4, rect5, rect6, rect7,
+				rect8, rect9);
+		borderChoice.setContentText("Please select a color");
+		borderChoice.setTitle("Color selection");
+		borderChoice.setHeaderText("");
+
 	}
 
 	private void buttonsEvents(Sudoku sudoku)
@@ -116,8 +122,6 @@ public class MainApp extends Application
 
 			}
 		});
-		
-		
 
 		loadButton.setOnAction(new EventHandler<ActionEvent>()
 		{
@@ -297,29 +301,27 @@ public class MainApp extends Application
 					}
 
 				});
-				
+
 				ind.getBorderButton().setOnAction(new EventHandler<ActionEvent>()
 				{
-
 
 					@Override
 					public void handle(ActionEvent arg0)
 					{
 						initBorderChoice();
 						Optional<Rectangle> border = borderChoice.showAndWait();
-						border.ifPresent(e->{
-							ind.getTextField().setBorder(
-									new Border(new BorderStroke(Color.web(colorRandom()), BorderStrokeStyle.SOLID,
-											CornerRadii.EMPTY, new BorderWidths(3))));
-							ind.getTextField().setBackground(new Background(
-									new BackgroundFill(e.getFill(), null, null)));
+						border.ifPresent(e ->
+						{
+							ind.getTextField()
+									.setBorder(new Border(new BorderStroke(Color.web(colorRandom()),
+											BorderStrokeStyle.SOLID, CornerRadii.EMPTY,
+											new BorderWidths(3))));
+							ind.getTextField().setBackground(
+									new Background(new BackgroundFill(e.getFill(), null, null)));
 						});
 						SetIndividualCaseBorder(ind);
 					}
 
-				
-
-					
 				});
 
 			}
@@ -328,10 +330,9 @@ public class MainApp extends Application
 
 	private void SetIndividualCaseBorder(IndividualCase ind)
 	{
-		
-		
+
 	}
-	
+
 	private void verification(Sudoku sudoku, IndividualCase ind)
 	{
 		ArrayList<IndividualCase> IndCaseList = new ArrayList<>();

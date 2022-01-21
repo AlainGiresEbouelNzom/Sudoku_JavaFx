@@ -2,7 +2,6 @@ package Sudoku;
 
 import java.util.ArrayList;
 
-import javafx.geometry.Insets;
 import javafx.scene.Group;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
@@ -15,7 +14,7 @@ import javafx.scene.paint.Color;
 public class IndividualCase
 {
 	private TextField bigTextField;
-	private HBox hbox ;
+	private HBox hbox;
 	private Button borderButton;
 	private Group littleNbrGroup;
 	private int id;
@@ -45,7 +44,7 @@ public class IndividualCase
 		bigTextField.getStyleClass().add(textfieldClass);
 
 		stackPane.getChildren().addAll(littleNbrGroup, bigTextField);
-		
+
 		hbox.getChildren().addAll(stackPane, borderButton);
 
 		// littleNbrGroup.toFront();
@@ -69,6 +68,7 @@ public class IndividualCase
 	public Group getLittleNbrGroup()
 	{
 		return littleNbrGroup;
+
 	}
 
 	public TextField getTextField()
@@ -108,13 +108,12 @@ public class IndividualCase
 		bigTextField = new TextField();
 
 		littleNbrGroup = new Group();
-		
-		hbox =  new HBox();
-		
-		borderButton =  new Button();
+
+		hbox = new HBox();
+
+		borderButton = new Button();
 
 		littleNbrList = new ArrayList<>();
-		
 
 		for (int i = 0; i < 5; i++)
 		{
