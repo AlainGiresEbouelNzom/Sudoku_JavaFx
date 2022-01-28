@@ -24,6 +24,8 @@ public class IndividualCase
 	private ArrayList<LittleNumber> littleNbrList;
 	private String color;
 
+	private ArrayList<ArrayList<IndividualCase>> BelongingList;
+
 	public String getColor()
 	{
 		return color;
@@ -37,9 +39,13 @@ public class IndividualCase
 
 	public IndividualCase(int id)
 	{
+		BelongingList = new ArrayList<>();
+
 		this.id = id;
 
 		init();
+
+		setColor("white");
 
 		bigTextField.getStyleClass().add(textfieldClass);
 
@@ -53,6 +59,11 @@ public class IndividualCase
 
 		littleNbrPosition();
 
+	}
+
+	public ArrayList<ArrayList<IndividualCase>> getBelongingList()
+	{
+		return BelongingList;
 	}
 
 	public HBox getHbox()

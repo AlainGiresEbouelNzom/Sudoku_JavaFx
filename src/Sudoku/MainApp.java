@@ -15,7 +15,6 @@ import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceDialog;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.Border;
@@ -243,27 +242,27 @@ public class MainApp extends Application
 					}
 				});
 
-				ind.getBigTextField().setOnMouseClicked(new EventHandler<MouseEvent>()
-				{
-
-					@Override
-
-					public void handle(MouseEvent e)
-					{
-						if (e.isControlDown())
-						{
-							ind.getBigTextField().toFront();
-							ind.getBigTextField().setBorder(new Border(new BorderStroke(Color.RED,
-									BorderStrokeStyle.SOLID, null, new BorderWidths(3))));
-							BackupSystem.SaveOnStacks(ind);
-//							ind.getTextField().setBackground(new Background(
-//									new BackgroundFill(Color.web(colorRandom()), null, null)));
-
-						}
-						// TODO Auto-generated method stub
-
-					}
-				});
+//				ind.getBigTextField().setOnMouseClicked(new EventHandler<MouseEvent>()
+//				{
+//
+//					@Override
+//
+//					public void handle(MouseEvent e)
+//					{
+//						if (e.isControlDown())
+//						{
+//							ind.getBigTextField().toFront();
+//							ind.getBigTextField().setBorder(new Border(new BorderStroke(Color.RED,
+//									BorderStrokeStyle.SOLID, null, new BorderWidths(3))));
+//							BackupSystem.SaveOnStacks(ind);
+////							ind.getTextField().setBackground(new Background(
+////									new BackgroundFill(Color.web(colorRandom()), null, null)));
+//
+//						}
+//						// TODO Auto-generated method stub
+//
+//					}
+//				});
 
 				/* Application du click de la souris au bigTextField */
 				/*
@@ -288,8 +287,7 @@ public class MainApp extends Application
 					@Override
 					public void handle(Event arg0)
 					{
-						ind.getTextField().setBackground(new Background(
-								new BackgroundFill(Color.web(colorRandom()), null, null)));
+						Sudoku.getVerificationSystem().Verification_2();
 //						verification(sudoku, ind);
 //						try
 //						{
