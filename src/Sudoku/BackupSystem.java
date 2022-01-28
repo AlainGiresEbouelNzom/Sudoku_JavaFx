@@ -37,22 +37,25 @@ public class BackupSystem
 			StackIsLocked = true;
 			Undo_redo_is_Active = true;
 			RedoStack.push(UndoStack.pop());
-			System.out.println(UndoStack.peek().getIndCase().getBigTextField().getText());
+
 			UndoStack.peek().getIndCase().getBigTextField().setText(UndoStack.peek().text);
-			System.out.println(UndoStack.peek().getIndCase().getBigTextField().getText());
+
 			UndoStack.peek().getIndCase().setColor(UndoStack.peek().color);
+			Sudoku.getVerificationSystem().Verification_2();
 		}
 	}
 
 	public static void Redo()
 	{
-		StackIsLocked = true;
-		Undo_redo_is_Active = true;
-		UndoStack.push(RedoStack.pop());
+		if (RedoStack.size() > 0)
+		{
+			StackIsLocked = true;
+			Undo_redo_is_Active = true;
+			UndoStack.push(RedoStack.pop());
 
-		UndoStack.peek().getIndCase().getBigTextField().setText(UndoStack.peek().text);
-		UndoStack.peek().getIndCase().setColor(UndoStack.peek().color);
-
+			UndoStack.peek().getIndCase().getBigTextField().setText(UndoStack.peek().text);
+			UndoStack.peek().getIndCase().setColor(UndoStack.peek().color);
+		}
 		/*
 		 * Load(UndoStack.peek()); StackIsLocked = false; Undo_redo_is_Active = false;
 		 */
@@ -68,6 +71,7 @@ public class BackupSystem
 	public static void SaveOnStacks(IndividualCase indCase)
 	{
 		UndoStack.push(new BackupSystem(indCase.getId(), indCase.getText(), indCase.getColor(), indCase));
+		// System.out.println(UndoStack.peek().getText());
 
 		if (RedoStack.size() > 0)
 		{

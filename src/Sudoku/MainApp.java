@@ -282,12 +282,13 @@ public class MainApp extends Application
 				 */
 
 				/* Évènement Saisi d'un bigNumber par l'utilisateur */
-				ind.getBigTextField().setOnKeyReleased(new EventHandler<Event>()
+				ind.getBigTextField().setOnKeyPressed(new EventHandler<Event>()
 				{
 					@Override
 					public void handle(Event arg0)
 					{
-						Sudoku.getVerificationSystem().Verification_2();
+
+						BackupSystem.SaveOnStacks(ind);
 //						verification(sudoku, ind);
 //						try
 //						{
@@ -296,6 +297,16 @@ public class MainApp extends Application
 //						{
 //							e.printStackTrace();
 //						}
+					}
+
+				});
+				/* Évènement Saisi d'un bigNumber par l'utilisateur */
+				ind.getBigTextField().setOnKeyReleased(new EventHandler<Event>()
+				{
+					@Override
+					public void handle(Event arg0)
+					{
+						Sudoku.getVerificationSystem().Verification_2();
 					}
 
 				});
